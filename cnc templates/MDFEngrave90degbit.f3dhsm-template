@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<template-document xmlns="http://www.hsmworks.com/namespace/hsmworks/document/template" version="1.0">
+
+  <template description="Engrave3" strategy="engrave" unit="millimeters">
+    <tool guid="d397e429-96e5-43bb-9515-27d3b4bf9166" type="chamfer mill" unit="millimeters" version="1.1">
+      <description>Carbide Tipped V-Groove 90 Deg x 3/8 Dia x 7/16 x 1/4 Inch Shank</description>
+      <comment>Amana Tool 45700 - SPEEDS ARE FOR MDF</comment>
+      <manufacturer>Amana Tool</manufacturer>
+      <product-id>45700</product-id>
+      <product-link>https://www.amanatool.com/45700-carbide-tipped-v-groove-90-deg-x-3-8-dia-x-7-16-x-1-4-inch-shank.html?ff=1&amp;fp=12486</product-link>
+      <nc break-control="0" diameter-offset="2" length-offset="2" live-tool="1" manual-tool-change="0" number="2" turret="0"/>
+      <coolant mode="flood"/>
+      <material name="carbide"/>
+      <body body-length="32" coolant-support="no" diameter="9.525" flute-length="11.1125" number-of-flutes="2" overall-length="41.275" shaft-diameter="6.35" shoulder-length="30" taper-angle="45" thread-pitch="0" thread-profile-angle="60" tip-diameter="0.0005"/>
+      <holder description="Maritool CAT40-ER32-2.35" product-id="CAT40-ER32-2.35" vendor="Maritool">
+        <section diameter="38.1" length="0"/>
+        <section diameter="50.038" length="3.7592"/>
+        <section diameter="50.038" length="21.2344"/>
+        <section diameter="39.878" length="0"/>
+        <section diameter="39.878" length="4.4704"/>
+        <section diameter="44.45" length="2.286"/>
+        <section diameter="44.45" length="10.795"/>
+        <section diameter="46.99" length="1.27"/>
+        <section diameter="62.0268" length="0"/>
+        <section diameter="63.5508" length="0.762"/>
+        <section diameter="63.5508" length="3.683"/>
+        <section diameter="56.261" length="2.0066"/>
+        <section diameter="56.261" length="2.9972"/>
+        <section diameter="63.5508" length="2.0066"/>
+        <section diameter="63.5508" length="3.6322"/>
+        <section diameter="62.0268" length="0.762"/>
+        <section diameter="44.45" length="0"/>
+        <section diameter="44.45" length="3.175"/>
+      </holder>
+      <motion clockwise="yes" cutting-feedrate="1000" entry-feedrate="1000" exit-feedrate="1000" feed-mode="per-minute" plunge-feedrate="333.333" ramp-feedrate="333.333" ramp-spindle-rpm="5000" retract-feedrate="333.333" spindle-rpm="5000"/>
+    </tool>
+    <parameter expression="'chamfer mill'" name="tool_type"/>
+    <parameter expression="'tapered_bull_nose'" name="tool_taperedType"/>
+    <parameter expression="'millimeters'" name="tool_unit"/>
+    <parameter expression="2" name="tool_number"/>
+    <parameter expression="tool_number" name="tool_diameterOffset"/>
+    <parameter expression="tool_number" name="tool_lengthOffset"/>
+    <parameter expression="tool_number" name="tool_compensationOffset"/>
+    <parameter expression="0" name="tool_turret"/>
+    <parameter expression="false" name="tool_manualToolChange"/>
+    <parameter expression="false" name="tool_breakControl"/>
+    <parameter expression="true" name="tool_live"/>
+    <parameter expression="'flood'" name="tool_coolant"/>
+    <parameter expression="'carbide'" name="tool_material"/>
+    <parameter expression="'Carbide Tipped V-Groove 90 Deg x 3/8 Dia x 7/16 x 1/4 Inch Shank'" name="tool_description"/>
+    <parameter expression="'Amana Tool 45700 - SPEEDS ARE FOR MDF'" name="tool_comment"/>
+    <parameter expression="'Amana Tool'" name="tool_vendor"/>
+    <parameter expression="'45700'" name="tool_productId"/>
+    <parameter expression="9.525" name="tool_diameter"/>
+    <parameter expression="tool_diameter + 2* tool_cornerRadius" name="tool_diameterDovetail"/>
+    <parameter expression="0.0005" name="tool_tipDiameter"/>
+    <parameter expression="0.0" name="tool_tipOffset"/>
+    <parameter expression="0.0" name="tool_cornerRadius"/>
+    <parameter expression="45." name="tool_taperAngle"/>
+    <parameter expression="(tool_type == 'counter sink') ? 90.0deg : 118.0deg" name="tool_tipAngle"/>
+    <parameter expression="60." name="tool_threadProfileAngle"/>
+    <parameter expression="0.0" name="tool_tipLength"/>
+    <parameter expression="11.1125" name="tool_fluteLength"/>
+    <parameter expression="30." name="tool_shoulderLength"/>
+    <parameter expression="32." name="tool_bodyLength"/>
+    <parameter expression="41.275" name="tool_overallLength"/>
+    <parameter expression="6.35" name="tool_shaftDiameter"/>
+    <parameter expression="0.0" name="tool_threadPitch"/>
+    <parameter expression="1" name="tool_numberOfTeeth"/>
+    <parameter expression="2" name="tool_numberOfFlutes"/>
+    <parameter expression="false" name="holder_attached"/>
+    <parameter expression="'Maritool CAT40-ER32-2.35'" name="holder_description"/>
+    <parameter expression="''" name="holder_comment"/>
+    <parameter expression="'Maritool'" name="holder_vendor"/>
+    <parameter expression="'CAT40-ER32-2.35'" name="holder_productId"/>
+    <parameter expression="''" name="holder_productLink"/>
+    <parameter expression="''" name="holder_libraryName"/>
+    <parameter expression="'https://www.amanatool.com/45700-carbide-tipped-v-groove-90-deg-x-3-8-dia-x-7-16-x-1-4-inch-shank.html?ff=1&amp;fp=12486'" name="tool_productLink"/>
+    <parameter expression="5000." name="tool_spindleSpeed"/>
+    <parameter expression="tool_isTurning ? (tool_unit == 'millimeters' ? 25 : 25.4) : tool_diameter" name="tool_stockDiameter"/>
+    <parameter expression="tool_diameter * Math.PI * tool_spindleSpeed" name="tool_surfaceSpeed"/>
+    <parameter expression="tool_spindleSpeed" name="tool_rampSpindleSpeed"/>
+    <parameter expression="1000." name="tool_feedCutting"/>
+    <parameter expression="tool_feedCutting/(tool_spindleSpeed * tool_numberOfFlutes)" name="tool_feedPerTooth"/>
+    <parameter expression="1000." name="tool_feedEntry"/>
+    <parameter expression="1000." name="tool_feedExit"/>
+    <parameter expression="333.333" name="tool_feedRamp"/>
+    <parameter expression="333.333" name="tool_feedPlunge"/>
+    <parameter expression="tool_feedPlunge/tool_spindleSpeed" name="tool_feedPerRevolution"/>
+    <parameter expression="tool_feedPlunge" name="tool_feedRetract"/>
+    <parameter expression="true" name="tool_clockwise"/>
+    <parameter expression="true" name="contours"/>
+    <parameter expression="false" name="doWrap"/>
+    <parameter expression="true" name="unwrap"/>
+    <parameter expression="false" name="wrap_cylinder"/>
+    <parameter expression="0mm" name="wrap_nominalRadius_offset"/>
+    <parameter expression="false" name="overrideToolView"/>
+    <parameter expression="'axesZX'" name="view_orientation_mode"/>
+    <parameter expression="false" name="view_orientation_axisZ"/>
+    <parameter expression="false" name="view_orientation_flipZ"/>
+    <parameter expression="false" name="view_orientation_axisX"/>
+    <parameter expression="false" name="view_orientation_flipX"/>
+    <parameter expression="false" name="view_orientation_axisY"/>
+    <parameter expression="false" name="view_orientation_flipY"/>
+    <parameter expression="false" name="view_orientation_cSys"/>
+    <parameter expression="'jobOrigin'" name="view_origin_mode"/>
+    <parameter expression="false" name="view_origin_point"/>
+    <parameter expression="'top center'" name="view_origin_boxPoint"/>
+    <parameter expression="'from retract height'" name="clearanceHeight_mode"/>
+    <parameter expression="false" name="clearanceHeight_ref"/>
+    <parameter expression="10mm" name="clearanceHeight_offset"/>
+    <parameter expression="15." name="clearanceHeight_value"/>
+    <parameter expression="'from stock top'" name="retractHeight_mode"/>
+    <parameter expression="false" name="retractHeight_ref"/>
+    <parameter expression="5mm" name="retractHeight_offset"/>
+    <parameter expression="5." name="retractHeight_value"/>
+    <parameter expression="'from top'" name="feedHeight_mode"/>
+    <parameter expression="false" name="feedHeight_ref"/>
+    <parameter expression="5mm" name="feedHeight_offset"/>
+    <parameter expression="5." name="feedHeight_value"/>
+    <parameter expression="'from contour'" name="topHeight_mode"/>
+    <parameter expression="false" name="topHeight_ref"/>
+    <parameter expression="0mm" name="topHeight_offset"/>
+    <parameter expression="0.0" name="topHeight_value"/>
+    <parameter expression="'from top'" name="bottomHeight_mode"/>
+    <parameter expression="false" name="bottomHeight_ref"/>
+    <parameter expression="(-4.7625) * 1mm" name="bottomHeight_offset"/>
+    <parameter expression="-4.7625" name="bottomHeight_value"/>
+    <parameter expression="0.01mm" name="tolerance"/>
+    <parameter expression="tolerance * 0.5" name="contourTolerance"/>
+    <parameter expression="tolerance" name="calculationTolerance"/>
+    <parameter expression="0.01*calculationTolerance" name="thinningTolerance"/>
+    <parameter expression="0.01mm" name="chainingTolerance"/>
+    <parameter expression="165deg" name="sharpCornerAngle"/>
+    <parameter expression="'disabled'" name="highFeedrateMode"/>
+    <parameter expression="Math.max(tool_feedCutting; Math.max(tool_feedEntry; tool_feedExit))" name="highFeedrate"/>
+    <parameter expression="true" name="keepToolDown"/>
+    <parameter expression="50mm" name="stayDownDistance"/>
+    <parameter expression="false" name="entryPositions"/>
+  </template>
+
+</template-document>
